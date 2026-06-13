@@ -3,840 +3,1371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гостевой дом "Чуя" | Кош-Агач, Алтай</title>
+    <title>Гостевой дом ЧУЯ — Кош-Агач, Алтай</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2d5016;
+            --secondary: #8b6914;
+            --accent: #c9a227;
+            --dark: #1a1a1a;
+            --light: #f5f5f0;
+            --white: #ffffff;
         }
-        
+
         body {
-            font-family: 'Georgia', serif;
-            background: #f5f0e8;
-            color: #2c2c2c;
-            line-height: 1.7;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background: var(--light);
+            line-height: 1.6;
         }
-        
+
         .hero {
-    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.35)), 
-                url('gostevoi_dom_chuia_enhanced.jpg') 60% center/cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    color: #fff;
-}
-            min-height: 100vh;
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, rgba(45,80,22,0.85) 0%, rgba(139,105,20,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-            color: #fff;
+            color: var(--white);
         }
-        
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201,162,39,0.2);
+            border: 1px solid var(--accent);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
         .hero h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 20px rgba(0,0,0,0.3);
         }
-        
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: #e8dcc8;
-            margin-bottom: 1rem;
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            margin-bottom: 40px;
         }
-        
-        .hero .tagline {
-            font-size: 1.1rem;
-            color: #c9b896;
-            max-width: 700px;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-        
-        .section {
-            margin-bottom: 4rem;
-        }
-        
-        .section h2 {
-            font-size: 2.2rem;
-            color: #8b6914;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #d4a853;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #3a3a3a;
-        }
-        
-        .highlight-box {
-            background: rgba(212, 168, 83, 0.15);
-            border-left: 4px solid #d4a853;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .photo-grid img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #ddd;
-            transition: transform 0.3s;
-        }
-        
-        .photo-grid img:hover {
-            transform: scale(1.05);
-            border-color: #d4a853;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e0d5c5;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .feature-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            color: #8b6914;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .feature-card p {
-            color: #555;
-            font-size: 1rem;
-        }
-        
-        .room-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .room-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e0d5c5;
-        }
-        
-        .room-card .room-info {
-            padding: 1.5rem;
-        }
-        
-        .room-card h3 {
-            color: #8b6914;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .room-card .price {
-            font-size: 1.8rem;
-            color: #2c2c2c;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-        
-        .discount-badge {
-            background: #d4a853;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 2px solid #d4a853;
-        }
-        
-        .contact-card h3 {
-            color: #8b6914;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .phone {
-            font-size: 1.4rem;
-            color: #2c2c2c;
-            font-weight: bold;
-            margin: 0.5rem 0;
-        }
-        
-        .messenger {
-            display: inline-block;
-            margin: 0.3rem;
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        
-        .messenger:hover {
-            transform: scale(1.05);
-        }
-        
-        .wa {
-            background: #25d366;
-            color: #fff;
-        }
-        
-        .tg {
-            background: #0088cc;
-            color: #fff;
-        }
-        
-        .map-links {
+
+        .hero-location {
             display: flex;
-            gap: 1rem;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
+            gap: 8px;
+            font-size: 1rem;
+            margin-bottom: 40px;
         }
-        
-        .map-btn {
+
+        .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            gap: 12px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            color: #fff;
-            transition: transform 0.2s;
-        }
-        
-        .map-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        .map-2gis {
-            background: #2e7d32;
-        }
-        
-        .map-yandex {
-            background: #ff0000;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #8b6914;
-            color: #fff;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.1rem;
-            margin-top: 1rem;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(201,162,39,0.4);
         }
-        
-        .btn:hover {
-            background: #a67c00;
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201,162,39,0.5);
         }
-        
-        .footer {
-            background: #2c2c2c;
-            text-align: center;
-            padding: 3rem 1rem;
-            color: #aaa;
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
         }
-        
-        .footer p {
-            margin-bottom: 0.5rem;
+
+        nav.scrolled {
+            background: rgba(26,26,26,0.95);
+            padding: 15px 40px;
         }
-        
-        .location-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: #e8dcc8;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i { color: var(--accent); font-size: 1.8rem; }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
             font-size: 0.9rem;
-            margin-top: 1rem;
-            border: 1px solid #e8dcc8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
-        
-        .yurt-banner {
-            background: linear-gradient(135deg, #c75b39 0%, #d4a853 100%);
-            color: #fff;
-            padding: 3rem 2rem;
-            border-radius: 12px;
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-phone i { color: var(--accent); }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
             text-align: center;
-            margin: 2rem 0;
+            margin-bottom: 60px;
         }
-        
-        .yurt-banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 15px;
         }
-        
-        .yurt-banner p {
-            color: #f5f0e8;
+
+        .section-header p {
+            color: var(--secondary);
             font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .about { background: var(--white); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
+        .about-feature i { color: var(--accent); font-size: 1.2rem; }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 12px;
+        }
+
+        .about-image-badge .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .about-image-badge .label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .photo-note {
+            background: linear-gradient(135deg, var(--accent) 0%, #d4b43a 100%);
+            color: var(--dark);
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rooms { background: var(--light); }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .room-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.02);
+        }
+
+        .room-card.featured:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .room-badge {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .room-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .room-image i { font-size: 4rem; color: rgba(255,255,255,0.3); }
+
+        .room-content { padding: 25px; }
+
+        .room-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .capacity {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .capacity i { color: var(--accent); }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .room-features span {
+            background: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .room-price {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .room-price .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .room-price .currency { font-size: 1rem; color: var(--secondary); }
+        .room-price .period { font-size: 0.85rem; color: #999; margin-left: 5px; }
+
+        .room-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .room-btn:hover { background: var(--secondary); }
+        .room-card.featured .room-btn { background: var(--accent); color: var(--dark); }
+        .room-card.featured .room-btn:hover { background: #d4b43a; }
+
+        .kitchen-note {
+            background: linear-gradient(135deg, rgba(201,162,39,0.15) 0%, rgba(201,162,39,0.05) 100%);
+            border: 1px dashed var(--accent);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .kitchen-note h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .kitchen-note h4 i { color: var(--accent); }
+
+        .kitchen-note p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .kitchen-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .kitchen-items span {
+            background: var(--white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            border: 1px solid var(--accent);
+        }
+
+        .yurt {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a3d0f 100%);
+            color: var(--white);
+        }
+
+        .yurt .section-header h2, .yurt .section-header p { color: var(--white); }
+
+        .yurt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .yurt-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .yurt-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .yurt-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .yurt-content p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .yurt-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .yurt-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .yurt-feature i { font-size: 1.5rem; color: var(--accent); margin-top: 3px; }
+        .yurt-feature div h4 { font-size: 1rem; margin-bottom: 5px; }
+        .yurt-feature div p { font-size: 0.9rem; opacity: 0.7; margin: 0; }
+
+        .excursions { background: var(--white); }
+
+        .excursions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .excursion-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+
+        .excursion-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .excursion-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .excursion-card h3 i { color: var(--accent); font-size: 1.1rem; }
+        .excursion-card p { color: #666; font-size: 0.95rem; }
+
+        .excursion-note {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .excursion-note h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .excursion-note p { opacity: 0.9; font-size: 1.05rem; }
+
+        .food {
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8ddd4 100%);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .food h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .food p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .food-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .food-tag {
+            background: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .food-tag i { color: var(--accent); }
+
+        .fishing-link {
+            background: linear-gradient(135deg, #1a3d5c 0%, #2d5a87 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .fishing-link h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .fishing-link p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fishing-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .fishing-link a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .amenities { background: var(--light); }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .amenity-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .amenity-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .amenity-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
+        .amenity-card p { font-size: 0.9rem; color: #888; }
+
+        .reviews { background: var(--white); }
+
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
         }
-        
+
         .review-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e0d5c5;
+            background: var(--light);
+            padding: 35px;
+            border-radius: 20px;
+            position: relative;
         }
-        
-        .review-card .stars {
-            color: #d4a853;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+
+        .review-card::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            line-height: 1;
         }
-        
-        .review-card .author {
-            color: #8b6914;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        
-        .review-card .date {
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        .tour-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .tour-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid #e0d5c5;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .tour-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-color: #d4a853;
-        }
-        
-        .tour-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .tour-card .tour-info {
-            padding: 1.5rem;
-        }
-        
-        .tour-card h3 {
-            color: #8b6914;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tour-card p {
-            font-size: 0.9rem;
+
+        .review-card p {
             color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
-        
-        .car-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
-            color: #fff;
-            padding: 2rem;
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .review-author-avatar {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .review-author-info h4 { font-size: 1rem; color: var(--primary); }
+        .review-author-info .stars { color: var(--accent); font-size: 0.85rem; }
+
+        .review-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .review-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
             border-radius: 12px;
-            margin: 2rem 0;
-            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-        
-        .car-section h3 {
-            color: #d4a853;
+
+        .review-link.yandex { background: #fc3f1d; color: white; }
+        .review-link.gis { background: #00a0e3; color: white; }
+        .review-link:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+        .contacts {
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+            color: var(--white);
+        }
+
+        .contacts .section-header h2, .contacts .section-header p { color: var(--white); }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 25px;
+            color: var(--accent);
         }
-        
-        .car-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+
+        .contact-person {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
         }
-        
-        .car-card {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid #d4a853;
+
+        .contact-person:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent);
         }
-        
-        .car-card h4 {
-            color: #d4a853;
+
+        .contact-person h4 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .road-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920') center/cover;
-            color: #fff;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
+
+        .contact-person h4 i { color: var(--accent); }
+
+        .contact-phone {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        .contact-phone:hover { color: var(--accent); }
+
+        .contact-messengers {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-messengers a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-messengers .wa { background: #25d366; color: white; }
+        .contact-messengers .tg { background: #0088cc; color: white; }
+        .contact-messengers a:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        .contact-address {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .contact-address h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+        }
+
+        .contact-address p { font-size: 1rem; opacity: 0.9; line-height: 1.8; }
+
+        .contact-map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            height: 100%;
+            min-height: 400px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-map i { font-size: 3rem; color: var(--accent); opacity: 0.5; }
+        .contact-map p { color: #888; font-size: 0.9rem; }
+
+        .map-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .map-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .map-links .yandex-map { background: #fc3f1d; color: white; }
+        .map-links .gis-map { background: #00a0e3; color: white; }
+        .map-links a:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        footer {
+            background: #111;
+            color: #888;
+            padding: 40px 20px;
             text-align: center;
         }
-        
-        .road-section h3 {
-            color: #d4a853;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+
+        footer .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
         }
-        
-        .road-section p {
-            color: #e8dcc8;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 1rem;
-        }
-        
-        .road-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .road-item {
-            background: rgba(255,255,255,0.15);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 1px solid #d4a853;
-        }
-        
-        .road-item h4 {
-            color: #d4a853;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero .subtitle { font-size: 1.2rem; }
+
+        @media (max-width: 900px) {
+            .about-grid, .yurt-grid, .contacts-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .about-image, .yurt-image { order: -1; }
+            .review-links, .map-links { flex-direction: column; align-items: center; }
+            .contact-messengers { flex-wrap: wrap; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
-    <section class="hero">
-        <h1>Гостевой дом "Чуя"</h1>
-        <p class="subtitle">Кош-Агач, Республика Алтай</p>
-        <p class="tagline">Уютный приют в центре Кош-Агачского района. Wi-Fi, бытовые удобства, душ, туалет. Для туристов, путешественников и рыбаков.</p>
-        <span class="location-badge">📍 1800 м над уровнем моря</span>
-        <br>
-        <a href="#contacts" class="btn">Забронировать номер</a>
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <i class="fas fa-mountain"></i>
+            ЧУЯ
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#rooms">Номера</a></li>
+            <li><a href="#yurt">Юрта</a></li>
+            <li><a href="#excursions">Экскурсии</a></li>
+            <li><a href="#amenities">Удобства</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <a href="tel:+79136966661" class="nav-phone">
+            <i class="fas fa-phone"></i>
+            8-913-696-66-61
+        </a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">Гостевой дом в Кош-Агаче</div>
+            <h1>ЧУЯ</h1>
+            <p class="hero-subtitle">Место слияния с природой Горного Алтая</p>
+            <div class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Республика Алтай, с. Кош-Агач, ул. Дружбы, 28А
+            </div>
+            <a href="#contacts" class="hero-cta">
+                <i class="fas fa-calendar-check"></i>
+                Забронировать номер
+            </a>
+        </div>
     </section>
 
-    <div class="container">
-        
-        <section class="section">
-            <h2>🏡 О нашем доме</h2>
-            <p>Гостевой дом "Чуя" находится в селе Кош-Агач — административном центре Кош-Агачского района Республики Алтай. Удобное расположение для всех, кто путешествует по Алтаю: туристы, фотографы, рыбаки, любители дикой природы.</p>
-            <p>После долгого дня на реке или автоэкскурсии на наших локациях вы вернётесь в тёплый дом с бытовыми удобствами: горячий душ, туалет, Wi-Fi. Поделитесь впечатлениями, загрузите фото, спланируйте завтрашний маршрут.</p>
-            
-            <div class="highlight-box">
-                <strong>3 номера, 9 спальных мест.</strong> Сдаём койко-место, комнату целиком или весь дом. Завтрак, обед и ужин — по договорённости. При бронировании всего дома — <strong>10 000 ₽</strong>!
-            </div>
-        </section>
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>О нашем доме</h3>
+                <p>Гостевой дом <strong>"Чуя"</strong> находится в селе Кош-Агач — административном центре Кош-Агачского района Республики Алтай. Удобное расположение для всех, кто путешествует по Алтаю: туристы, фотографы, рыбаки, любители дикой природы.</p>
+                <p>После долгого дня на реке или автоэкскурсии на наших джипах вы вернётесь в <strong>тёплый дом</strong> с бытовыми удобствами: горячий душ, туалет, Wi-Fi. Поделитесь впечатлениями, загрузите фото, спланируйте завтрашний маршрут.</p>
+                <p><strong>3 номера, 9 спальных мест.</strong> Сдаём койко-место, комнату целиком или весь дом. Завтрак, обед и ужин — по договорённости. При бронировании всего дома — <strong>10 000 ₽!</strong></p>
 
-        <section class="section">
-            <h2>✨ Что мы предлагаем</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon">🛏️</div>
-                    <h3>3 номера, 9 мест</h3>
-                    <p>Уютные комнаты с удобными кроватями, чистым бельём. Сдаём по койко-месту, комнату целиком или весь дом.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🍲</div>
-                    <h3>Домашняя кухня</h3>
-                    <p>Завтрак, обед и ужин — по договорённости. Алтайская и казахская кухня, свежие продукты.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🚿</div>
-                    <h3>Бытовые удобства</h3>
-                    <p>Горячий душ, туалет в доме. Всё для комфортного отдыха после дня в тайге.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">📶</div>
-                    <h3>Wi-Fi</h3>
-                    <p>Беспроводной интернет. Поделитесь впечатлениями, загрузите фото, спланируйте маршрут.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🚙</div>
-                    <h3>Трансфер и туры</h3>
-                    <p>Организуем автоэкскурсии по Кош-Агачскому району. Достопримечательности, природа, фотолокации.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🛁</div>
-                    <h3>Баня на территории</h3>
-                    <p>Настоящая баня на дровах. Парьтесь, отдыхайте, восстанавливайте силы после дороги.</p>
+                <div class="about-features">
+                    <div class="about-feature"><i class="fas fa-wifi"></i><span>Wi-Fi</span></div>
+                    <div class="about-feature"><i class="fas fa-shower"></i><span>Горячий душ</span></div>
+                    <div class="about-feature"><i class="fas fa-toilet"></i><span>Туалет</span></div>
+                    <div class="about-feature"><i class="fas fa-temperature-high"></i><span>Тёплый дом</span></div>
+                    <div class="about-feature"><i class="fas fa-utensils"></i><span>Кухня</span></div>
+                    <div class="about-feature"><i class="fas fa-car"></i><span>Трансфер</span></div>
                 </div>
             </div>
-        </section>
+            <div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800" alt="Гостевой дом Чуя">
+                    <div class="about-image-badge">
+                        <div class="number">1800 м</div>
+                        <div class="label">Над уровнем моря</div>
+                    </div>
+                </div>
+                <div class="photo-note">
+                    <i class="fas fa-camera"></i>
+                    Здесь будет ваше фото гостевого дома
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>🏕️ Казахская юрта</h2>
-            <p>Рядом с домом стоит настоящая казахская юрта. Здесь можно почувствовать атмосферу кочевников — выпить чай из настоящего самовара и попробовать бешбармак.</p>
-            
-            <div class="photo-grid" style="margin: 2rem 0;">
-                <img src="https://kimi-web-img.moonshot.cn/img/www.advantour.com/16b8d0d4eacf8827d432a6c487295337b9fe22a8.jpg" alt="Интерьер казахской юрты">
-                <img src="https://kimi-web-img.moonshot.cn/img/avatars.mds.yandex.net/03f95ff05b9e9bbd98dd8624ac1c7878802dd497" alt="Бешбармак — традиционное блюдо">
-                <img src="https://kimi-web-img.moonshot.cn/img/www.vkoem.kz/09cc3b833373cbd0badb2e911bfbf0416a961c85.jpg" alt="Юрта с самоваром">
-                <img src="https://kimi-web-img.moonshot.cn/img/assembly.kz/ae832cd30d1240867911cb2ebd59cf8b95fcec32.jpg" alt="Накрытый стол с бешбармаком">
-            </div>
-            
-            <div class="yurt-banner">
-                <h3>🐎 Атмосфера кочевников</h3>
-                <p>Самовар, бешбармак, казахское гостеприимство. Не просто ночлег — настоящее погружение в культуру.</p>
-            </div>
-        </section>
+    <section class="rooms" id="rooms">
+        <div class="section-header">
+            <h2>Номера и цены</h2>
+            <div class="section-divider"></div>
+            <p>Выберите подходящий вариант размещения для вашего отдыха в Кош-Агаче</p>
+        </div>
 
-        <section class="section">
-            <h2>🛏️ Номера и цены</h2>
-            <div class="room-grid">
-                <div class="room-card">
-                    <div class="room-info">
-                        <h3>Комната 1 — 2-местная</h3>
-                        <p>Уютный номер с двумя удобными кроватями. Идеально для пары или друзей.</p>
-                        <div class="price">2 500 ₽</div>
-                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-image"><i class="fas fa-bed"></i></div>
+                <div class="room-content">
+                    <h3>Койко-место</h3>
+                    <div class="capacity"><i class="fas fa-user"></i>1 человек</div>
+                    <div class="room-features">
+                        <span>Общая комната</span><span>Wi-Fi</span><span>Кухня</span><span>Душ</span>
                     </div>
-                </div>
-                <div class="room-card">
-                    <div class="room-info">
-                        <h3>Комната 2 — 3-местная</h3>
-                        <p>Просторный номер на три человека. Для компании друзей или семьи с ребёнком.</p>
-                        <div class="price">3 600 ₽</div>
-                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
-                    </div>
-                </div>
-                <div class="room-card">
-                    <div class="room-info">
-                        <h3>Комната 3 — 4-местная</h3>
-                        <p>Большой номер на четверых. Семейный или групповой вариант.</p>
-                        <div class="price">4 800 ₽</div>
-                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
-                    </div>
+                    <div class="room-price"><span class="price">1 200</span><span class="currency">₽</span><span class="period">/ сутки</span></div>
+                    <a href="#contacts" class="room-btn">Забронировать</a>
                 </div>
             </div>
-            
-            <div class="highlight-box" style="text-align: center; margin-top: 2rem;">
-                <strong>🏠 Бронируйте весь дом — всего 10 000 ₽!</strong><br>
-                Все 3 номера (9 мест): <span style="text-decoration: line-through; color: #888;">10 900 ₽</span> → <strong style="color: #8b6914; font-size: 1.5rem;">10 000 ₽</strong>
-                <div class="discount-badge">ЭКОНОМИЯ 900 ₽</div>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>🚙 Автоэкскурсии по Алтаю</h2>
-            <p>Организуем незабываемые автоэкскурсии по самым красивым местам Кош-Агачского района и Горного Алтая. Путешествуйте с комфортом на надёжных внедорожниках!</p>
-            <p>Если повезёт — увидим яков, верблюдов, сурков, горных архаров, снежного барса, медведя!</p>
-            
-            <div class="car-section">
-                <h3>🚗 Наш автопарк</h3>
-                <div class="car-grid">
-                    <div class="car-card">
-                        <h4>🚙 Toyota Land Cruiser 100</h4>
-                        <p>Легендарный внедорожник премиум-класса. Вместимость до 6 человек. Максимальный комфорт на дальних маршрутах и сложных дорогах.</p>
+            <div class="room-card">
+                <div class="room-image"><i class="fas fa-bed"></i></div>
+                <div class="room-content">
+                    <h3>2-местный номер</h3>
+                    <div class="capacity"><i class="fas fa-heart"></i>Идеально для семейной пары</div>
+                    <div class="room-features">
+                        <span>Двуспальная кровать</span><span>Прикроватная тумба</span><span>Стол, стулья</span>
+                        <span>Посуда</span><span>Чайник</span><span>Холодильник</span><span>ТВ</span><span>Фен</span>
+                        <span>Раковина</span><span>Унитаз</span><span>Душ</span><span>Обогреватель</span>
                     </div>
-                    <div class="car-card">
-                        <h4>🚙 УАЗ Фермер</h4>
-                        <p>Надёжный рабочий автомобиль. Для снаряжения и до 500 кг груза. Проходимость в любых условиях.</p>
-                    </div>
-                    <div class="car-card">
-                        <h4>🚙 УАЗ Хантер</h4>
-                        <p>Классический внедорожник. Для настоящих приключений и бездорожья.</p>
-                    </div>
+                    <div class="room-price"><span class="price">2 500</span><span class="currency">₽</span><span class="period">/ сутки</span></div>
+                    <a href="#contacts" class="room-btn">Забронировать</a>
                 </div>
             </div>
-            
-            <h3 style="margin-top: 2rem; color: #8b6914;">🗺️ Направления</h3>
-            <div class="tour-grid">
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/7c57415fcebced2f9faa7de5b8fcf050b6ec0514.jpg" alt="Монголия">
-                    <div class="tour-info">
-                        <h3>🇲🇳 Монголия</h3>
-                        <p>Граница и степные просторы. Бескрайние луга, кочевые стойбища, дух свободы. Можно увидеть яков и верблюдов.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.aurora-altai.ru/5968b9f7b30a6e5853275be9b87d776950c46f79.webp" alt="Укок">
-                    <div class="tour-info">
-                        <h3>🏔️ Плато Укок</h3>
-                        <p>Высокогорное плато до 2500 м. Заповедные степи, древние курганы, снежные вершины. Шанс увидеть снежного барса.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/turistka.ru/51ebdab6f42f48defb48f04296c641993450a646.jpg" alt="Елангаш">
-                    <div class="tour-info">
-                        <h3>🌸 Долина Елангаш</h3>
-                        <p>Цветущие луга и горные пейзажи. Рай для фотографов и любителей природы. Летом — море цветов.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/upload.wikimedia.org/519ef003d22b0941dad9558ba8dd37b65c885cce.jpg" alt="Софийский ледник">
-                    <div class="tour-info">
-                        <h3>❄️ Софийский ледник</h3>
-                        <p>Величественные ледники и вершины. Место силы и невероятной красоты. Голубой лёд и снежные шапки.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/b1.vpoxod.ru/7a9e089622fab1ec62b91b774d85d1430c579c87.jpg" alt="Марс">
-                    <div class="tour-info">
-                        <h3>🔴 Марс (Кызыл-Чин)</h3>
-                        <p>Марсианские пейзажи. Красные скалы, как на другой планете. Фантастика для фото и впечатлений.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/media.kasperskycontenthub.com/e442a1a46c2ce6c670e0401a774b881a474d9ed8.jpg" alt="Карагем">
-                    <div class="tour-info">
-                        <h3>🏞️ Карагем (Аргут)</h3>
-                        <p>Горные реки и живописные ущелья. Рай для рыбаков и любителей тишины. Можно встретить архаров.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/xaike.ru/2da6d06ea640ea13ab79c0be0c46598c2b3f9b43.jpg" alt="Бугузун">
-                    <div class="tour-info">
-                        <h3>🌿 Бугузун</h3>
-                        <p>Живописная долина и горные пейзажи. Перевал, откуда открываются виды на вечность. Топ-место для фото.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.altay.ru/30b6b0f03f6bce1c93e5f8b5116f3ac290d0f7ea.jpg" alt="Джумалинский источник">
-                    <div class="tour-info">
-                        <h3>💧 Джумалинский источник</h3>
-                        <p>Горячие минеральные источники в сердце плато Укок. Природная купель с лечебной водой.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/turistka.ru/59144a1ed826d393adfdfd5638ba7414be3a63ea.jpg" alt="Акколь и Караколь">
-                    <div class="tour-info">
-                        <h3>🏔️ Акколь и Караколь</h3>
-                        <p>Горные озёра и альпийские луга. Нетронутая природа и кристальная вода. Место для души.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/avatars.mds.yandex.net/d4d5a77bafd9c0b73b9b6e7afc750dc803975742" alt="Тархатинский комплекс">
-                    <div class="tour-info">
-                        <h3>🏛️ Тархатинский комплекс</h3>
-                        <p>Древние захоронения и петроглифы. Историко-культурный объект, духовное место силы.</p>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="https://kimi-web-img.moonshot.cn/img/sun9-60.userapi.com/4a5d363d5f8a874eab49d5b40cc9ce132c953969.jpg" alt="Жалгызтобе">
-                    <div class="tour-info">
-                        <h3>⛰️ Жалгызтобе</h3>
-                        <p>Одинокая гора — мистическое место. Вулканические скалы, панорамные виды, энергетическое место силы.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="highlight-box" style="margin-top: 2rem;">
-                <strong>🎣 Дополнительно:</strong> рыбалка на хариуса, трансфер, организация автоэкскурсий. Всё обсуждаемо — звоните, договоримся!
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>🎣 Также у нас: рыбалка на хариуса</h2>
-            <p>Организуем рыболовные туры в Кош-Агачском районе. Снаряжение, трансфер, гид — всё включено. Подробности — по запросу.</p>
-        </section>
-
-        <section class="section">
-            <h2>💬 Отзывы гостей</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Останавливались на 3 ночи по пути к Укоку. Чисто, уютно, тёплый душ после тайги — бесценно. Гуля накормила от души, бешбармак в юрте — огонь!"</p>
-                    <div class="author">Алексей, Москва</div>
-                    <div class="date">август 2025</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Брали дом целиком компанией 6 человек. Wi-Fi работал, баня — супер. Ездили на автоэкскурсии на Land Cruiser, вечерами сидели в юрте с самоваром. Рекомендую!"</p>
-                    <div class="author">Марина и компания, Новосибирск</div>
-                    <div class="date">июль 2025</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Комната за 2500 ₽ — отличная цена для Алтая. Завтрак плотный, обед по просьбе готовили. Удобно, что можно договориться о питании на месте."</p>
-                    <div class="author">Дмитрий, Барнаул</div>
-                    <div class="date">сентябрь 2025</div>
+            <div class="room-card">
+                <div class="room-image"><i class="fas fa-bed"></i></div>
+                <div class="room-content">
+                    <h3>3-местный номер</h3>
+                    <div class="capacity"><i class="fas fa-users"></i>3 человека</div>
+                    <div class="room-features">
+                        <span>Двуспальная кровать</span><span>Односпальная кровать</span><span>Прикроватная тумба</span>
+                        <span>Стол, стулья</span><span>Посуда</span><span>Чайник</span><span>Холодильник</span>
+                        <span>ТВ</span><span>Фен</span><span>Раковина</span><span>Унитаз</span><span>Душ</span><span>Обогреватель</span>
+                    </div>
+                    <div class="room-price"><span class="price">3 600</span><span class="currency">₽</span><span class="period">/ сутки</span></div>
+                    <a href="#contacts" class="room-btn">Забронировать</a>
                 </div>
             </div>
-            
-            <div class="map-links">
-                <a href="https://2gis.ru/gornoaltaysk/firm/70000001054235734?m=88.680939%2C50.008113%2F16" class="map-btn map-2gis" target="_blank">
-                    🗺️ Отзывы на 2ГИС
-                </a>
-                <a href="https://yandex.ru/maps/-/CPdpQAob" class="map-btn map-yandex" target="_blank">
-                    📍 Отзывы на Яндекс Картах
-                </a>
-            </div>
-            <p style="text-align: center; color: #888; font-size: 0.9rem;">Оставьте отзыв — нам важно ваше мнение!</p>
-        </section>
 
-        <section class="section">
-            <h2>🛣️ Дорога к нам — уже приключение</h2>
-            <p>Путь к гостевому дому "Чуя" — это не просто трансфер, а настоящее путешествие. Вы проедете по одной из самых красивых дорог России.</p>
-            
-            <div class="road-section">
-                <h3>🌄 Чуйский тракт — дорога, вошедшая в топ-5 самых живописных маршрутов мира по версии National Geographic</h3>
-                <p>520 километров невероятных пейзажей от Горно-Алтайска до Кош-Агача. Горные реки, бескрайние степи, снежные вершины, древние курганы и кочевые стоянки.</p>
-                
-                <div class="road-highlights">
-                    <div class="road-item">
-                        <h4>⛰️ Перевал Семинский</h4>
-                        <p>Высота 1717 м. Место силы с панорамными видами</p>
+            <div class="room-card">
+                <div class="room-image"><i class="fas fa-bed"></i></div>
+                <div class="room-content">
+                    <h3>4-местный номер</h3>
+                    <div class="capacity"><i class="fas fa-users"></i>4 человека</div>
+                    <div class="room-features">
+                        <span>Двуспальная кровать</span><span>Односпальная кровать</span><span>Раскладушка</span>
+                        <span>Прикроватная тумба</span><span>Стол, стулья</span><span>Посуда</span><span>Чайник</span>
+                        <span>Холодильник</span><span>ТВ</span><span>Фен</span><span>Раковина</span><span>Унитаз</span><span>Душ</span><span>Обогреватель</span>
                     </div>
-                    <div class="road-item">
-                        <h4>🏔️ Перевал Чике-Таман</h4>
-                        <p>Серпантин среди скал и леса</p>
+                    <div class="room-price"><span class="price">4 800</span><span class="currency">₽</span><span class="period">/ сутки</span></div>
+                    <a href="#contacts" class="room-btn">Забронировать</a>
+                </div>
+            </div>
+
+            <div class="room-card featured">
+                <div class="room-badge">Выгодно!</div>
+                <div class="room-image"><i class="fas fa-home"></i></div>
+                <div class="room-content">
+                    <h3>Дом целиком</h3>
+                    <div class="capacity"><i class="fas fa-users"></i>До 9 человек</div>
+                    <div class="room-features">
+                        <span>3 номера</span><span>9 спальных мест</span><span>Кухонная зона</span><span>Холодильник</span>
+                        <span>Микроволновка</span><span>Плита</span><span>Посуда</span><span>Душ</span><span>Биотуалет</span><span>Бойлер</span>
                     </div>
-                    <div class="road-item">
-                        <h4>🌊 Катунь и Чуя</h4>
-                        <p>Бирюзовые реки, пороги и пляжи</p>
+                    <div class="room-price"><span class="price">10 000</span><span class="currency">₽</span><span class="period">/ сутки</span></div>
+                    <div style="color: var(--accent); font-size: 0.9rem; margin-bottom: 15px; font-weight: 600;"><i class="fas fa-piggy-bank"></i> Экономия 800 ₽</div>
+                    <a href="#contacts" class="room-btn">Забронировать</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="kitchen-note">
+            <h4><i class="fas fa-utensils"></i> Общая кухонная зона</h4>
+            <p>У нас одна общая кухонная зона для всех гостей, где есть всё необходимое:</p>
+            <div class="kitchen-items">
+                <span><i class="fas fa-snowflake"></i> Холодильник</span>
+                <span><i class="fas fa-mug-hot"></i> Чайник</span>
+                <span><i class="fas fa-radiation"></i> Микроволновка</span>
+                <span><i class="fas fa-fire"></i> Плита</span>
+                <span><i class="fas fa-utensil-spoon"></i> Посуда</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="yurt" id="yurt">
+        <div class="section-header">
+            <h2>Казахская юрта</h2>
+            <div class="section-divider"></div>
+            <p>Почувствуйте атмосферу кочевников на территории гостевого дома</p>
+        </div>
+
+        <div class="yurt-grid">
+            <div class="yurt-image">
+                <img src="https://images.unsplash.com/photo-1518182170546-0766bc6f9213?w=800" alt="Казахская юрта">
+            </div>
+            <div class="yurt-content">
+                <h3>Атмосфера кочевников</h3>
+                <p>На территории гостевого дома расположена традиционная <strong>казахская юрта</strong> — место, где можно отвлечься от суеты и погрузиться в культуру Алтайских кочевников.</p>
+                <p>Уютный интерьер, тёплые ковры, низкий стол — всё создано для того, чтобы вы почувствовали себя гостем в настоящем кочевом жилище.</p>
+
+                <div class="yurt-features">
+                    <div class="yurt-feature">
+                        <i class="fas fa-mug-hot"></i>
+                        <div><h4>Чай из самовара</h4><p>Традиционный казахский чай с молоком и солью</p></div>
                     </div>
-                    <div class="road-item">
-                        <h4>🦅 Долина Уймон</h4>
-                        <p>Старообрядческие сёла и духовная столица</p>
+                    <div class="yurt-feature">
+                        <i class="fas fa-drumstick-bite"></i>
+                        <div><h4>Бешбармак</h4><p>Национальное блюдо из конины или баранины</p></div>
                     </div>
-                    <div class="road-item">
-                        <h4>🌿 Курайская степь</h4>
-                        <p>Бескрайние просторы и горные хребты</p>
+                    <div class="yurt-feature">
+                        <i class="fas fa-fire"></i>
+                        <div><h4>Вечера у костра</h4><p>Под звёздным небом Кош-Агача</p></div>
                     </div>
-                    <div class="road-item">
-                        <h4>🏔️ Перевал Уймонский</h4>
-                        <p>Вход в Кош-Агачский район. Высота 2000+ м</p>
+                    <div class="yurt-feature">
+                        <i class="fas fa-music"></i>
+                        <div><h4>Дух степи</h4><p>Традиции и культура Алтайских просторов</p></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="highlight-box">
-                <strong>✈️ Ближайший аэропорт:</strong> Горно-Алтайск (IGT). Далее 520 км по Чуйскому тракту — около 8-9 часов. Можем организовать трансфер или встретить в аэропорту.<br><br>
-                <strong>🚗 Из Барнаула:</strong> 650 км, около 10-11 часов. Дорога через Бийск, Майму, Чемал, Тюнгур.<br><br>
-                <strong>💡 Совет:</strong> Берите тёплую одежду даже летом — высота 1800 м, климат резко континентальный. Ночью может быть прохладно!
+        </div>
+    </section>
+
+    <section class="food" id="food">
+        <h3>Питание</h3>
+        <p>Завтрак, обед и ужин — <strong>по договорённости</strong>. Готовим домашнюю еду из местных продуктов. Попробуйте настоящий бешбармак и другие блюда казахской кухни.</p>
+        <div class="food-tags">
+            <div class="food-tag"><i class="fas fa-coffee"></i> Завтрак</div>
+            <div class="food-tag"><i class="fas fa-hamburger"></i> Обед</div>
+            <div class="food-tag"><i class="fas fa-utensils"></i> Ужин</div>
+            <div class="food-tag"><i class="fas fa-leaf"></i> Местные продукты</div>
+            <div class="food-tag"><i class="fas fa-fire-alt"></i> Бешбармак</div>
+        </div>
+    </section>
+
+    <section class="excursions" id="excursions">
+        <div class="section-header">
+            <h2>Автоэкскурсии и трансфер</h2>
+            <div class="section-divider"></div>
+            <p>Путешествия по самым живописным местам Алтая на наших джипах</p>
+        </div>
+
+        <div class="excursions-grid">
+            <div class="excursion-card">
+                <h3><i class="fas fa-mountain"></i> Плато Укок</h3>
+                <p>Загадочное плато с древними курганами и уникальной природой. Место силы и духовности.</p>
             </div>
-        </section>
+            <div class="excursion-card">
+                <h3><i class="fas fa-globe-asia"></i> Монголия</h3>
+                <p>Пограничные районы, кочевые стойбища, неповторимые пейзажи степи.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-water"></i> Карагемский прорыв</h3>
+                <p>Мощный водопад на реке Чуя — одно из самых впечатляющих мест Алтая.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-icicles"></i> Софийский ледник</h3>
+                <p>Величественный ледник у подножия Белухи. Ледяное царство Горного Алтая.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-water"></i> Акколь и Караколь</h3>
+                <p>Голубое озеро в горах и живописная долина с древними петроглифами — кристально чистая вода и потрясающие виды.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-water"></i> Бугузун</h3>
+                <p>Живописная река и долина — идеальное место для отдыха и фотосессий.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-water"></i> Киндыктыколь</h3>
+                <p>Горное озеро с невероятной энергетикой и красотой.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-mountain"></i> Жалгыз-Тобе</h3>
+                <p>Одинокая гора с панорамными видами на бескрайние просторы.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-industry"></i> Тархатинский металлургический комплекс</h3>
+                <p>Историческое место древней металлургии на Алтае.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-mountain"></i> Джазатор</h3>
+                <p>Живописная долина с уникальными ландшафтами и природой.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-hot-tub"></i> Джумалинский источник</h3>
+                <p>Термальные источники для расслабления после длительных поездок.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-mountain"></i> Юстыт</h3>
+                <p>Живописная местность с уникальной флорой и фауной.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-globe"></i> Марс</h3>
+                <p>Необычный ландшафт, похожий на поверхность Марса — красные скалы и пустынная атмосфера.</p>
+            </div>
+            <div class="excursion-card">
+                <h3><i class="fas fa-mountain"></i> Долина Елангаш</h3>
+                <p>Живописная долина с уникальными геологическими образованиями и красивыми видами.</p>
+            </div>
+            <div class="excursion-note">
+                <h3><i class="fas fa-car"></i> Трансфер</h3>
+                <p>Встреча из аэропорта / вокзала, доставка до точек назначения. Удобные джипы для любых дорог Алтая.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section" id="contacts">
-            <h2>📞 Забронировать проживание или тур</h2>
-            <p style="text-align: center; font-size: 1.2rem;">Пишите или звоните — расскажем про номера, свободные даты, автоэкскурсии и рыбалку!</p>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Есканат</h3>
-                    <div class="phone">8 (913) 696-66-61</div>
-                    <div>
-                        <a href="https://wa.me/79136966661" class="messenger wa" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/+79136966661" class="messenger tg" target="_blank">Telegram</a>
+    <section class="fishing-link" id="fishing">
+        <h3><i class="fas fa-fish"></i> Рыбалка на хариуса</h3>
+        <p>Организуем рыбалку на хариуса — короля Алтайских рек. Профессиональные гиды, лучшие места, всё необходимое снаряжение.</p>
+        <a href="#" onclick="alert('Страница рыбалки в разработке'); return false;">
+            <i class="fas fa-external-link-alt"></i>
+            Подробнее о рыбалке
+        </a>
+    </section>
+
+    <section class="amenities" id="amenities">
+        <div class="section-header">
+            <h2>Удобства</h2>
+            <div class="section-divider"></div>
+            <p>Всё для комфортного проживания в условиях высокогорья</p>
+        </div>
+
+        <div class="amenities-grid">
+            <div class="amenity-card"><i class="fas fa-temperature-high"></i><h3>Тёплый дом</h3><p>Комфортно даже в холодную погоду</p></div>
+            <div class="amenity-card"><i class="fas fa-utensils"></i><h3>Кухонная зона</h3><p>Общая кухня с холодильником, чайником, микроволновкой, плитой, посудой</p></div>
+            <div class="amenity-card"><i class="fas fa-shower"></i><h3>Душ</h3><p>Горячий душ с бойлером</p></div>
+            <div class="amenity-card"><i class="fas fa-toilet"></i><h3>Биотуалет</h3><p>Современные удобства</p></div>
+            <div class="amenity-card"><i class="fas fa-wifi"></i><h3>Wi-Fi</h3><p>Беспроводной интернет</p></div>
+            <div class="amenity-card"><i class="fas fa-tv"></i><h3>Телевизор</h3><p>В каждом номере</p></div>
+            <div class="amenity-card"><i class="fas fa-wind"></i><h3>Фен</h3><p>Для сушки волос</p></div>
+            <div class="amenity-card"><i class="fas fa-sink"></i><h3>Раковина</h3><p>Умывальник в номере</p></div>
+            <div class="amenity-card"><i class="fas fa-fire-alt"></i><h3>Обогреватель</h3><p>Дополнительное тепло</p></div>
+            <div class="amenity-card"><i class="fas fa-car"></i><h3>Парковка</h3><p>Место для вашего авто</p></div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <h2>Отзывы гостей</h2>
+            <div class="section-divider"></div>
+            <p>Что говорят о нас наши гости</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>Отличное место для остановки в Кош-Агаче! Тёплый дом, уютные номера, всё необходимое есть. Есканат и Крайбек — прекрасные хозяева, организовали нам потрясающую экскурсию на Укок. Обязательно вернёмся!</p>
+                <div class="review-author">
+                    <div class="review-author-avatar">А</div>
+                    <div class="review-author-info">
+                        <h4>Алексей</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
-                    <p style="margin-top: 1rem; color: #555;">Организация туров, рыбалка</p>
-                </div>
-                <div class="contact-card">
-                    <h3>Крайбек</h3>
-                    <div class="phone">8 (913) 691-64-83</div>
-                    <div>
-                        <a href="https://wa.me/79136916483" class="messenger wa" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/+79136916483" class="messenger tg" target="_blank">Telegram</a>
-                    </div>
-                    <p style="margin-top: 1rem; color: #555;">Автоэкскурсии, маршруты</p>
-                </div>
-                <div class="contact-card">
-                    <h3>Гуля</h3>
-                    <div class="phone">8 (913) 694-61-54</div>
-                    <div>
-                        <a href="https://wa.me/79136946154" class="messenger wa" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/+79136946154" class="messenger tg" target="_blank">Telegram</a>
-                    </div>
-                    <p style="margin-top: 1rem; color: #555;">Проживание, питание, юрта</p>
                 </div>
             </div>
-        </section>
+            <div class="review-card">
+                <p>Рыбалка на хариуса была просто великолепной! Гостевой дом стал нашей базой для нескольких дней. Юрта — отдельная история, атмосфера невероятная. Рекомендую всем, кто едет на Алтай!</p>
+                <div class="review-author">
+                    <div class="review-author-avatar">М</div>
+                    <div class="review-author-info">
+                        <h4>Михаил</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <p>Снимали дом целиком компанией из 7 человек. Очень выгодно и удобно! Кухня со всей посудой, душ горячий, интернет стабильный. Организовали трансфер из аэропорта. Спасибо за гостеприимство!</p>
+                <div class="review-author">
+                    <div class="review-author-avatar">Е</div>
+                    <div class="review-author-info">
+                        <h4>Елена</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    </div>
+        <div class="review-links">
+            <a href="https://yandex.ru/maps/org/gostevoy_dom_chuya/" target="_blank" class="review-link yandex">
+                <i class="fas fa-map-marker-alt"></i>
+                Отзывы на Яндекс Картах
+            </a>
+            <a href="https://2gis.ru/altai_republic/search/%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B2%D0%BE%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D1%87%D1%83%D1%8F" target="_blank" class="review-link gis">
+                <i class="fas fa-map"></i>
+                Отзывы на 2ГИС
+            </a>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <p>© Гостевой дом "Чуя" | Кош-Агач, Республика Алтай</p>
-        <p>Уют, комфорт и кочевое гостеприимство 🏔️</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">WhatsApp и Telegram — напишите прямо сейчас</p>
+    <section class="contacts" id="contacts">
+        <div class="section-header">
+            <h2>Контакты и бронирование</h2>
+            <div class="section-divider"></div>
+            <p>Свяжитесь с нами удобным способом</p>
+        </div>
+
+        <div class="contacts-grid">
+            <div class="contact-info">
+                <h3><i class="fas fa-phone-alt"></i> Наши контакты</h3>
+
+                <div class="contact-person">
+                    <h4><i class="fas fa-user"></i> Есканат</h4>
+                    <a href="tel:+79136966661" class="contact-phone">8-913-696-66-61</a>
+                    <div class="contact-messengers">
+                        <a href="https://wa.me/79136966661" target="_blank" class="wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/+79136966661" target="_blank" class="tg"><i class="fab fa-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+
+                <div class="contact-person">
+                    <h4><i class="fas fa-user"></i> Крайбек</h4>
+                    <a href="tel:+79136916483" class="contact-phone">8-913-691-64-83</a>
+                    <div class="contact-messengers">
+                        <a href="https://wa.me/79136916483" target="_blank" class="wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/+79136916483" target="_blank" class="tg"><i class="fab fa-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+
+                <div class="contact-person">
+                    <h4><i class="fas fa-user"></i> Гуля</h4>
+                    <a href="tel:+79136946154" class="contact-phone">8-913-694-61-54</a>
+                    <div class="contact-messengers">
+                        <a href="https://wa.me/79136946154" target="_blank" class="wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/+79136946154" target="_blank" class="tg"><i class="fab fa-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+
+                <div class="contact-address">
+                    <h4><i class="fas fa-map-marker-alt"></i> Адрес</h4>
+                    <p>
+                        Республика Алтай<br>
+                        с. Кош-Агач<br>
+                        ул. Дружбы, 28А<br><br>
+                        <i class="fas fa-mountain"></i> 1800 м над уровнем моря
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-map">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>Карта загружается...</p>
+                <div class="map-links">
+                    <a href="https://yandex.ru/maps/org/gostevoy_dom_chuya/" target="_blank" class="yandex-map">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Яндекс Карты
+                    </a>
+                    <a href="https://2gis.ru/altai_republic/search/%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B2%D0%BE%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D1%87%D1%83%D1%8F" target="_blank" class="gis-map">
+                        <i class="fas fa-map"></i>
+                        2ГИС
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">ЧУЯ</div>
+        <p>Гостевой дом в Кош-Агаче, Республика Алтай<br>
+        © 2026 Все права защищены</p>
     </footer>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-Добавлен главный файл сайта
