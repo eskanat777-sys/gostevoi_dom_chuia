@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гостевой дом "Чуя" | Кош-Агач, Алтай</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: #f5f0e8;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=1920') center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            color: #fff;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #e8dcc8;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #c9b896;
+            max-width: 700px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            color: #8b6914;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #d4a853;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #3a3a3a;
+        }
+        
+        .highlight-box {
+            background: rgba(212, 168, 83, 0.15);
+            border-left: 4px solid #d4a853;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .photo-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: transform 0.3s;
+        }
+        
+        .photo-grid img:hover {
+            transform: scale(1.05);
+            border-color: #d4a853;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e0d5c5;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #8b6914;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-card p {
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .room-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e0d5c5;
+        }
+        
+        .room-card .room-info {
+            padding: 1.5rem;
+        }
+        
+        .room-card h3 {
+            color: #8b6914;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .room-card .price {
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .discount-badge {
+            background: #d4a853;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #d4a853;
+        }
+        
+        .contact-card h3 {
+            color: #8b6914;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .phone {
+            font-size: 1.4rem;
+            color: #2c2c2c;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .messenger {
+            display: inline-block;
+            margin: 0.3rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .messenger:hover {
+            transform: scale(1.05);
+        }
+        
+        .wa {
+            background: #25d366;
+            color: #fff;
+        }
+        
+        .tg {
+            background: #0088cc;
+            color: #fff;
+        }
+        
+        .map-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+        
+        .map-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .map-2gis {
+            background: #2e7d32;
+        }
+        
+        .map-yandex {
+            background: #ff0000;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #8b6914;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #a67c00;
+        }
+        
+        .footer {
+            background: #2c2c2c;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #aaa;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: #e8dcc8;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            border: 1px solid #e8dcc8;
+        }
+        
+        .yurt-banner {
+            background: linear-gradient(135deg, #c75b39 0%, #d4a853 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .yurt-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .yurt-banner p {
+            color: #f5f0e8;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .review-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e0d5c5;
+        }
+        
+        .review-card .stars {
+            color: #d4a853;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .review-card .author {
+            color: #8b6914;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .review-card .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .tour-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e0d5c5;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #d4a853;
+        }
+        
+        .tour-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .tour-card .tour-info {
+            padding: 1.5rem;
+        }
+        
+        .tour-card h3 {
+            color: #8b6914;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tour-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .car-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .car-section h3 {
+            color: #d4a853;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .car-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #d4a853;
+        }
+        
+        .car-card h4 {
+            color: #d4a853;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .road-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920') center/cover;
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .road-section h3 {
+            color: #d4a853;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .road-section p {
+            color: #e8dcc8;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+        
+        .road-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .road-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #d4a853;
+        }
+        
+        .road-item h4 {
+            color: #d4a853;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Гостевой дом "Чуя"</h1>
+        <p class="subtitle">Кош-Агач, Республика Алтай</p>
+        <p class="tagline">Уютный приют в центре Кош-Агачского района. Wi-Fi, бытовые удобства, душ, туалет. Для туристов, путешественников и рыбаков.</p>
+        <span class="location-badge">📍 1800 м над уровнем моря</span>
+        <br>
+        <a href="#contacts" class="btn">Забронировать номер</a>
+    </section>
+
+    <div class="container">
+        
+        <section class="section">
+            <h2>🏡 О нашем доме</h2>
+            <p>Гостевой дом "Чуя" находится в селе Кош-Агач — административном центре Кош-Агачского района Республики Алтай. Удобное расположение для всех, кто путешествует по Алтаю: туристы, фотографы, рыбаки, любители дикой природы.</p>
+            <p>После долгого дня на реке или автоэкскурсии на наших локациях вы вернётесь в тёплый дом с бытовыми удобствами: горячий душ, туалет, Wi-Fi. Поделитесь впечатлениями, загрузите фото, спланируйте завтрашний маршрут.</p>
+            
+            <div class="highlight-box">
+                <strong>3 номера, 9 спальных мест.</strong> Сдаём койко-место, комнату целиком или весь дом. Завтрак, обед и ужин — по договорённости. При бронировании всего дома — <strong>10 000 ₽</strong>!
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>✨ Что мы предлагаем</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🛏️</div>
+                    <h3>3 номера, 9 мест</h3>
+                    <p>Уютные комнаты с удобными кроватями, чистым бельём. Сдаём по койко-месту, комнату целиком или весь дом.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🍲</div>
+                    <h3>Домашняя кухня</h3>
+                    <p>Завтрак, обед и ужин — по договорённости. Алтайская и казахская кухня, свежие продукты.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚿</div>
+                    <h3>Бытовые удобства</h3>
+                    <p>Горячий душ, туалет в доме. Всё для комфортного отдыха после дня в тайге.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📶</div>
+                    <h3>Wi-Fi</h3>
+                    <p>Беспроводной интернет. Поделитесь впечатлениями, загрузите фото, спланируйте маршрут.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚙</div>
+                    <h3>Трансфер и туры</h3>
+                    <p>Организуем автоэкскурсии по Кош-Агачскому району. Достопримечательности, природа, фотолокации.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛁</div>
+                    <h3>Баня на территории</h3>
+                    <p>Настоящая баня на дровах. Парьтесь, отдыхайте, восстанавливайте силы после дороги.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🏕️ Казахская юрта</h2>
+            <p>Рядом с домом стоит настоящая казахская юрта. Здесь можно почувствовать атмосферу кочевников — выпить чай из настоящего самовара и попробовать бешбармак.</p>
+            
+            <div class="photo-grid" style="margin: 2rem 0;">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.advantour.com/16b8d0d4eacf8827d432a6c487295337b9fe22a8.jpg" alt="Интерьер казахской юрты">
+                <img src="https://kimi-web-img.moonshot.cn/img/avatars.mds.yandex.net/03f95ff05b9e9bbd98dd8624ac1c7878802dd497" alt="Бешбармак — традиционное блюдо">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.vkoem.kz/09cc3b833373cbd0badb2e911bfbf0416a961c85.jpg" alt="Юрта с самоваром">
+                <img src="https://kimi-web-img.moonshot.cn/img/assembly.kz/ae832cd30d1240867911cb2ebd59cf8b95fcec32.jpg" alt="Накрытый стол с бешбармаком">
+            </div>
+            
+            <div class="yurt-banner">
+                <h3>🐎 Атмосфера кочевников</h3>
+                <p>Самовар, бешбармак, казахское гостеприимство. Не просто ночлег — настоящее погружение в культуру.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛏️ Номера и цены</h2>
+            <div class="room-grid">
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Комната 1 — 2-местная</h3>
+                        <p>Уютный номер с двумя удобными кроватями. Идеально для пары или друзей.</p>
+                        <div class="price">2 500 ₽</div>
+                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Комната 2 — 3-местная</h3>
+                        <p>Просторный номер на три человека. Для компании друзей или семьи с ребёнком.</p>
+                        <div class="price">3 600 ₽</div>
+                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Комната 3 — 4-местная</h3>
+                        <p>Большой номер на четверых. Семейный или групповой вариант.</p>
+                        <div class="price">4 800 ₽</div>
+                        <p style="font-size: 0.9rem; color: #888;">Завтрак, обед и ужин — по договорённости</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="text-align: center; margin-top: 2rem;">
+                <strong>🏠 Бронируйте весь дом — всего 10 000 ₽!</strong><br>
+                Все 3 номера (9 мест): <span style="text-decoration: line-through; color: #888;">10 900 ₽</span> → <strong style="color: #8b6914; font-size: 1.5rem;">10 000 ₽</strong>
+                <div class="discount-badge">ЭКОНОМИЯ 900 ₽</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🚙 Автоэкскурсии по Алтаю</h2>
+            <p>Организуем незабываемые автоэкскурсии по самым красивым местам Кош-Агачского района и Горного Алтая. Путешествуйте с комфортом на надёжных внедорожниках!</p>
+            <p>Если повезёт — увидим яков, верблюдов, сурков, горных архаров, снежного барса, медведя!</p>
+            
+            <div class="car-section">
+                <h3>🚗 Наш автопарк</h3>
+                <div class="car-grid">
+                    <div class="car-card">
+                        <h4>🚙 Toyota Land Cruiser 100</h4>
+                        <p>Легендарный внедорожник премиум-класса. Вместимость до 6 человек. Максимальный комфорт на дальних маршрутах и сложных дорогах.</p>
+                    </div>
+                    <div class="car-card">
+                        <h4>🚙 УАЗ Фермер</h4>
+                        <p>Надёжный рабочий автомобиль. Для снаряжения и до 500 кг груза. Проходимость в любых условиях.</p>
+                    </div>
+                    <div class="car-card">
+                        <h4>🚙 УАЗ Хантер</h4>
+                        <p>Классический внедорожник. Для настоящих приключений и бездорожья.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem; color: #8b6914;">🗺️ Направления</h3>
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/7c57415fcebced2f9faa7de5b8fcf050b6ec0514.jpg" alt="Монголия">
+                    <div class="tour-info">
+                        <h3>🇲🇳 Монголия</h3>
+                        <p>Граница и степные просторы. Бескрайние луга, кочевые стойбища, дух свободы. Можно увидеть яков и верблюдов.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.aurora-altai.ru/5968b9f7b30a6e5853275be9b87d776950c46f79.webp" alt="Укок">
+                    <div class="tour-info">
+                        <h3>🏔️ Плато Укок</h3>
+                        <p>Высокогорное плато до 2500 м. Заповедные степи, древние курганы, снежные вершины. Шанс увидеть снежного барса.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/turistka.ru/51ebdab6f42f48defb48f04296c641993450a646.jpg" alt="Елангаш">
+                    <div class="tour-info">
+                        <h3>🌸 Долина Елангаш</h3>
+                        <p>Цветущие луга и горные пейзажи. Рай для фотографов и любителей природы. Летом — море цветов.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/upload.wikimedia.org/519ef003d22b0941dad9558ba8dd37b65c885cce.jpg" alt="Софийский ледник">
+                    <div class="tour-info">
+                        <h3>❄️ Софийский ледник</h3>
+                        <p>Величественные ледники и вершины. Место силы и невероятной красоты. Голубой лёд и снежные шапки.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/b1.vpoxod.ru/7a9e089622fab1ec62b91b774d85d1430c579c87.jpg" alt="Марс">
+                    <div class="tour-info">
+                        <h3>🔴 Марс (Кызыл-Чин)</h3>
+                        <p>Марсианские пейзажи. Красные скалы, как на другой планете. Фантастика для фото и впечатлений.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/media.kasperskycontenthub.com/e442a1a46c2ce6c670e0401a774b881a474d9ed8.jpg" alt="Карагем">
+                    <div class="tour-info">
+                        <h3>🏞️ Карагем (Аргут)</h3>
+                        <p>Горные реки и живописные ущелья. Рай для рыбаков и любителей тишины. Можно встретить архаров.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/xaike.ru/2da6d06ea640ea13ab79c0be0c46598c2b3f9b43.jpg" alt="Бугузун">
+                    <div class="tour-info">
+                        <h3>🌿 Бугузун</h3>
+                        <p>Живописная долина и горные пейзажи. Перевал, откуда открываются виды на вечность. Топ-место для фото.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.altay.ru/30b6b0f03f6bce1c93e5f8b5116f3ac290d0f7ea.jpg" alt="Джумалинский источник">
+                    <div class="tour-info">
+                        <h3>💧 Джумалинский источник</h3>
+                        <p>Горячие минеральные источники в сердце плато Укок. Природная купель с лечебной водой.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/turistka.ru/59144a1ed826d393adfdfd5638ba7414be3a63ea.jpg" alt="Акколь и Караколь">
+                    <div class="tour-info">
+                        <h3>🏔️ Акколь и Караколь</h3>
+                        <p>Горные озёра и альпийские луга. Нетронутая природа и кристальная вода. Место для души.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/avatars.mds.yandex.net/d4d5a77bafd9c0b73b9b6e7afc750dc803975742" alt="Тархатинский комплекс">
+                    <div class="tour-info">
+                        <h3>🏛️ Тархатинский комплекс</h3>
+                        <p>Древние захоронения и петроглифы. Историко-культурный объект, духовное место силы.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://kimi-web-img.moonshot.cn/img/sun9-60.userapi.com/4a5d363d5f8a874eab49d5b40cc9ce132c953969.jpg" alt="Жалгызтобе">
+                    <div class="tour-info">
+                        <h3>⛰️ Жалгызтобе</h3>
+                        <p>Одинокая гора — мистическое место. Вулканические скалы, панорамные виды, энергетическое место силы.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <strong>🎣 Дополнительно:</strong> рыбалка на хариуса, трансфер, организация автоэкскурсий. Всё обсуждаемо — звоните, договоримся!
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎣 Также у нас: рыбалка на хариуса</h2>
+            <p>Организуем рыболовные туры в Кош-Агачском районе. Снаряжение, трансфер, гид — всё включено. Подробности — по запросу.</p>
+        </section>
+
+        <section class="section">
+            <h2>💬 Отзывы гостей</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Останавливались на 3 ночи по пути к Укоку. Чисто, уютно, тёплый душ после тайги — бесценно. Гуля накормила от души, бешбармак в юрте — огонь!"</p>
+                    <div class="author">Алексей, Москва</div>
+                    <div class="date">август 2025</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Брали дом целиком компанией 6 человек. Wi-Fi работал, баня — супер. Ездили на автоэкскурсии на Land Cruiser, вечерами сидели в юрте с самоваром. Рекомендую!"</p>
+                    <div class="author">Марина и компания, Новосибирск</div>
+                    <div class="date">июль 2025</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Комната за 2500 ₽ — отличная цена для Алтая. Завтрак плотный, обед по просьбе готовили. Удобно, что можно договориться о питании на месте."</p>
+                    <div class="author">Дмитрий, Барнаул</div>
+                    <div class="date">сентябрь 2025</div>
+                </div>
+            </div>
+            
+            <div class="map-links">
+                <a href="https://2gis.ru/gornoaltaysk/firm/70000001054235734?m=88.680939%2C50.008113%2F16" class="map-btn map-2gis" target="_blank">
+                    🗺️ Отзывы на 2ГИС
+                </a>
+                <a href="https://yandex.ru/maps/-/CPdpQAob" class="map-btn map-yandex" target="_blank">
+                    📍 Отзывы на Яндекс Картах
+                </a>
+            </div>
+            <p style="text-align: center; color: #888; font-size: 0.9rem;">Оставьте отзыв — нам важно ваше мнение!</p>
+        </section>
+
+        <section class="section">
+            <h2>🛣️ Дорога к нам — уже приключение</h2>
+            <p>Путь к гостевому дому "Чуя" — это не просто трансфер, а настоящее путешествие. Вы проедете по одной из самых красивых дорог России.</p>
+            
+            <div class="road-section">
+                <h3>🌄 Чуйский тракт — дорога, вошедшая в топ-5 самых живописных маршрутов мира по версии National Geographic</h3>
+                <p>520 километров невероятных пейзажей от Горно-Алтайска до Кош-Агача. Горные реки, бескрайние степи, снежные вершины, древние курганы и кочевые стоянки.</p>
+                
+                <div class="road-highlights">
+                    <div class="road-item">
+                        <h4>⛰️ Перевал Семинский</h4>
+                        <p>Высота 1717 м. Место силы с панорамными видами</p>
+                    </div>
+                    <div class="road-item">
+                        <h4>🏔️ Перевал Чике-Таман</h4>
+                        <p>Серпантин среди скал и леса</p>
+                    </div>
+                    <div class="road-item">
+                        <h4>🌊 Катунь и Чуя</h4>
+                        <p>Бирюзовые реки, пороги и пляжи</p>
+                    </div>
+                    <div class="road-item">
+                        <h4>🦅 Долина Уймон</h4>
+                        <p>Старообрядческие сёла и духовная столица</p>
+                    </div>
+                    <div class="road-item">
+                        <h4>🌿 Курайская степь</h4>
+                        <p>Бескрайние просторы и горные хребты</p>
+                    </div>
+                    <div class="road-item">
+                        <h4>🏔️ Перевал Уймонский</h4>
+                        <p>Вход в Кош-Агачский район. Высота 2000+ м</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>✈️ Ближайший аэропорт:</strong> Горно-Алтайск (IGT). Далее 520 км по Чуйскому тракту — около 8-9 часов. Можем организовать трансфер или встретить в аэропорту.<br><br>
+                <strong>🚗 Из Барнаула:</strong> 650 км, около 10-11 часов. Дорога через Бийск, Майму, Чемал, Тюнгур.<br><br>
+                <strong>💡 Совет:</strong> Берите тёплую одежду даже летом — высота 1800 м, климат резко континентальный. Ночью может быть прохладно!
+            </div>
+        </section>
+
+        <section class="section" id="contacts">
+            <h2>📞 Забронировать проживание или тур</h2>
+            <p style="text-align: center; font-size: 1.2rem;">Пишите или звоните — расскажем про номера, свободные даты, автоэкскурсии и рыбалку!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Есканат</h3>
+                    <div class="phone">8 (913) 696-66-61</div>
+                    <div>
+                        <a href="https://wa.me/79136966661" class="messenger wa" target="_blank">WhatsApp</a>
+                        <a href="https://t.me/+79136966661" class="messenger tg" target="_blank">Telegram</a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #555;">Организация туров, рыбалка</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Крайбек</h3>
+                    <div class="phone">8 (913) 691-64-83</div>
+                    <div>
+                        <a href="https://wa.me/79136916483" class="messenger wa" target="_blank">WhatsApp</a>
+                        <a href="https://t.me/+79136916483" class="messenger tg" target="_blank">Telegram</a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #555;">Автоэкскурсии, маршруты</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Гуля</h3>
+                    <div class="phone">8 (913) 694-61-54</div>
+                    <div>
+                        <a href="https://wa.me/79136946154" class="messenger wa" target="_blank">WhatsApp</a>
+                        <a href="https://t.me/+79136946154" class="messenger tg" target="_blank">Telegram</a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #555;">Проживание, питание, юрта</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>© Гостевой дом "Чуя" | Кош-Агач, Республика Алтай</p>
+        <p>Уют, комфорт и кочевое гостеприимство 🏔️</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">WhatsApp и Telegram — напишите прямо сейчас</p>
+    </footer>
+
+</body>
+</html>
+Добавлен главный файл сайта
