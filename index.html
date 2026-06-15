@@ -1828,56 +1828,30 @@
                 <div class="phone-big">+7 (913) 696-66-61</div>
                 <p style="margin-top: 10px; font-size: 13px;">Или заполните форму ниже:</p>
             </div>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQmSjUb_sNIYhCLao8ntBr3Ki1Z1HFfuYn7hRLHtOOjNn05g/viewform?embedded=true" 
-                width="100%" 
-                height="800" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0"
-                style="border: none;">
-                Загрузка…
-            </iframe>
-        </div>
-    </div>
-</div>
-    
-    <div class="modal-overlay" id="modal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-header">
-                <h3>Бронирование</h3>
-                <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
-            </div>
-            <div class="modal-body">
-                <div class="calendar-info">
-                    <p>Для быстрого бронирования звоните:</p>
-                    <div class="phone-big">+7 (913) 696-66-61</div>
-                    <p style="margin-top: 10px; font-size: 13px;">Или заполните форму ниже:</p>
-                </div>
-                <form id="bookingForm" onsubmit="sendToTelegram(event)">
+             <form id="bookingForm" action="https://script.google.com/macros/s/AKfycbzyHzu-BJArov9peHEu9qRyiujOEDe4zQc4U0MLDNyymaREFmFwgvrVvX0dfwuIy8sN/exec" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label>Имя</label>
-                            <input type="text" placeholder="Ваше имя" required>
+                            <input type="text" name="name" placeholder="Ваше имя" required>
                         </div>
                         <div class="form-group">
                             <label>Телефон</label>
-                            <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label>Дата заезда</label>
-                            <input type="date" required>
+                            <input type="date" name="checkin" required>
                         </div>
                         <div class="form-group">
                             <label>Дата выезда</label>
-                            <input type="date" required>
+                            <input type="date" name="checkout" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Тип номера</label>
-                        <select id="roomType">
+                        <select name="room" id="roomType">
                             <option value="">Выберите номер</option>
                             <option value="2-местный">2-местный номер — 2 500 ₽/сутки</option>
                             <option value="3-местный">3-местный номер — 3 600 ₽/сутки</option>
@@ -1888,18 +1862,17 @@
                     </div>
                     <div class="form-group">
                         <label>Количество гостей</label>
-                        <input type="number" min="1" max="10" placeholder="1" required>
+                        <input type="number" name="guests" min="1" max="10" placeholder="1" required>
                     </div>
                     <div class="form-group">
                         <label>Комментарий</label>
-                        <textarea rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                        <textarea name="comment" rows="3" placeholder="Дополнительные пожелания..."></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Отправить заявку</button>
                 </form>
             </div>
         </div>
     </div>
-
     <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
@@ -1973,7 +1946,42 @@
                 }
             });
         });
-         
+
+        // === ОБРАБОТКА ОТПРАВКИ ФОРМЫ (Google Apps Script) ===
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = this.querySelector('.btn-submit');
+            const originalText = btn.textContent;
+            btn.textContent = 'Отправка...';
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                    closeModal();
+                    this.reset();
+                } else {
+                    alert('❌ Ошибка: ' + (data.error || 'Не удалось отправить заявку'));
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('❌ Ошибка отправки. Позвоните нам: +7 (913) 696-66-61');
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+        });
     </script>
+
 </body>
 </html>
