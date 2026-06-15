@@ -1816,6 +1816,32 @@
     </div>
 
     <div class="modal-overlay" id="modal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-header">
+            <h3>Бронирование</h3>
+            <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+        </div>
+        <div class="modal-body">
+            <div class="calendar-info">
+                <p>Для быстрого бронирования звоните:</p>
+                <div class="phone-big">+7 (913) 696-66-61</div>
+                <p style="margin-top: 10px; font-size: 13px;">Или заполните форму ниже:</p>
+            </div>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQmSjUb_sNIYhCLao8ntBr3Ki1Z1HFfuYn7hRLHtOOjNn05g/viewform?embedded=true" 
+                width="100%" 
+                height="800" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0"
+                style="border: none;">
+                Загрузка…
+            </iframe>
+        </div>
+    </div>
+</div>
+    
+    <div class="modal-overlay" id="modal">
         <div class="modal">
             <button class="modal-close" onclick="closeModal()">&times;</button>
             <div class="modal-header">
@@ -1947,46 +1973,7 @@
                 }
             });
         });
-         // === ОТПРАВКА В TELEGRAM ===
-    function sendToTelegram(e) {
-        e.preventDefault();
-        
-        const name = document.querySelector('input[placeholder="Ваше имя"]').value;
-        const phone = document.querySelector('input[type="tel"]').value;
-        const dates = document.querySelectorAll('input[type="date"]');
-        const checkin = dates[0].value;
-        const checkout = dates[1].value;
-        const room = document.getElementById('roomType').value;
-        const guests = document.querySelector('input[type="number"]').value;
-        const comment = document.querySelector('textarea').value;
-        
-        const message = `🔔 <b>Новая бронь!</b>\n\n` +
-            `👤 <b>Имя:</b> ${name}\n` +
-            `📞 <b>Телефон:</b> ${phone}\n` +
-            `📅 <b>Заезд:</b> ${checkin}\n` +
-            `📅 <b>Выезд:</b> ${checkout}\n` +
-            `🏠 <b>Номер:</b> ${room}\n` +
-            `👥 <b>Гостей:</b> ${guests}\n` +
-            (comment ? `💬 <b>Комментарий:</b> ${comment}` : '');
-        
-        const BOT_TOKEN = '8406570672:AAFQg3bqg3zW2RXOE-J9Pyc3hgTbKnHyNak';
-        const CHAT_ID = '1221726350';
-        
-        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                chat_id: CHAT_ID,
-                text: message,
-                parse_mode: 'HTML'
-            })
-        }).then(() => {
-            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-            closeModal();
-        }).catch(() => {
-            alert('❌ Ошибка отправки. Позвоните нам: +7 (913) 696-66-61');
-        });
-    }
+         
     </script>
 </body>
 </html>
