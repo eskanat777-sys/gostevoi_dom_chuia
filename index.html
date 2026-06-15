@@ -28,23 +28,166 @@
     <meta property="og:site_name" content="Гостевой дом ЧУЯ">
     <meta property="og:locale" content="ru_RU">
     
-    <!-- ====== SCHEMA.ORG (микроразметка для Google) ====== -->
+        <!-- ====== SCHEMA.ORG (микроразметка для Google) ====== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
       "name": "Гостевой дом ЧУЯ",
-      "description": "Уютный гостевой дом в Кош-Агаче, Республика Алтай. Номера 2-4 места, баня, мангал, казахская юрта, экскурсии на внедорожниках.",
+      "description": "Уютный гостевой дом в Кош-Агаче, Республика Алтай. Номера 2-4 места от 1200₽, баня, мангал, шампуры, казахская юрта, автоэкскурсии на внедорожниках, рыбалка на хариуса.",
       "url": "https://altai-chuya.ru/",
       "telephone": ["+79136966661", "+79136916483"],
+      "email": "eskanat777@yandex.ru",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "RU",
         "addressRegion": "Республика Алтай",
         "addressLocality": "Кош-Агач",
-        "streetAddress": "ул. Дружбы, 28А"
+        "streetAddress": "ул. Дружбы, 28А",
+        "postalCode": "649780"
       },
-      "priceRange": "1200-10000 RUB"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "50.008057",
+        "longitude": "88.680845"
+      },
+      "priceRange": "1200-10000 RUB",
+      "image": [
+        "https://altai-chuya.ru/gostevoi_dom_chuia_enhanced.jpg",
+        "https://altai-chuya.ru/photo_5267442278475700727_y.jpg",
+        "https://altai-chuya.ru/photo_5292234796803234488_y.jpg",
+        "https://altai-chuya.ru/photo_5292234796803234490_y.jpg",
+        "https://altai-chuya.ru/FullSizeRender.jpg"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Парковка", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Мангал", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Шампура", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Баня", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Питание", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Юрта", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Экскурсии", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Рыбалка", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Кухня", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Душ", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Отопление", "value": true}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Номера и размещение",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "2-местный номер",
+              "description": "Одна двуспальная кровать, идеально для семейной пары",
+              "occupancy": {"@type": "QuantitativeValue", "value": 2},
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "2500",
+                "priceCurrency": "RUB",
+                "unitText": "за сутки"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "3-местный номер",
+              "description": "Комфортное размещение для троих",
+              "occupancy": {"@type": "QuantitativeValue", "value": 3},
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "3600",
+                "priceCurrency": "RUB",
+                "unitText": "за сутки"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "4-местный номер",
+              "description": "Идеально для большой компании до 4 человек",
+              "occupancy": {"@type": "QuantitativeValue", "value": 4},
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "4800",
+                "priceCurrency": "RUB",
+                "unitText": "за сутки"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Дом целиком",
+              "description": "Снимайте весь дом для большой компании",
+              "occupancy": {"@type": "QuantitativeValue", "value": 10},
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "10000",
+                "priceCurrency": "RUB",
+                "unitText": "за сутки"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Койко-место",
+              "description": "Бюджетный вариант для путешественников-одиночек",
+              "occupancy": {"@type": "QuantitativeValue", "value": 1},
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "1200",
+                "priceCurrency": "RUB",
+                "unitText": "за сутки"
+              }
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Александр и Мария"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Потрясающее место! Дом очень уютный и тёплый, хозяева приветливые. Экскурсия на Укок оставила незабываемые впечатления.",
+          "datePublished": "2025-08-01"
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Елена К."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Юрта — это что-то невероятное! Бешбармак был великолепен, а чай из самовара под звёздами Алтая — лучший вечер в моей жизни.",
+          "datePublished": "2025-07-15"
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Игорь и Сергей"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Рыбалка на хариуса превзошла все ожидания! Поймали трофейный экземпляр, уха на костре была божественной.",
+          "datePublished": "2025-09-10"
+        }
+      ]
     }
     </script>
     
